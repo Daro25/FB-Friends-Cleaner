@@ -63,8 +63,8 @@ async function cleanFriends() {
                 
                 // Seleccionar "Eliminar de mis amigos" (índice 3 por defecto)
                 let menuItems = [...document.querySelectorAll('[role="menuitem"]')];
-                if (menuItems[3]) {
-                    menuItems[3].click();
+                if (menuItems[menuItems.length - 1].textContent.includes("Eliminar")) {
+                    menuItems[menuItems.length - 1].click();
                     await new Promise(resolve => setTimeout(resolve, 500));
                     
                     // Confirmar eliminación
